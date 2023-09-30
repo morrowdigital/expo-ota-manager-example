@@ -1,22 +1,29 @@
 {
-  "name": "ota-plugin-example",
+  "name": "expo-ota-manager-example",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "build:preview:android": "env-cmd eas build --profile preview --platform android",
+    "build:preview:ios": "env-cmd eas build --profile preview --platform ios",
+    "update:preview": "env-cmd eas update --branch main"
   },
   "dependencies": {
     "expo": "~49.0.13",
+    "expo-ota-manager": "^1.1.5",
+    "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
+    "expo-updates": "~0.18.14",
     "react": "18.2.0",
     "react-native": "0.72.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~18.2.14",
+    "env-cmd": "^10.1.0",
     "typescript": "^5.1.3"
   },
   "private": true
